@@ -9,7 +9,7 @@
 #import "FakeJudgeHandle.h"
 #import "Reachability.h"
 #import "EquipInformation.h"
-
+#import "NetworkClient.h"
 
 //0为正式服  1为测试服
 #define signNum  0
@@ -48,15 +48,14 @@
                          @"PkgType": @(0),
                          @"Platform": @"AppStore",
                          };
-  //  NSLog(@"----------------------------------------%@", dict);
-  [HNNetWorkManager postRequestWithURLString:signNum == 0?formalURL:testURL parameters:dict success:^(id response) {
-    NSData *jsonData = [response dataUsingEncoding:NSUTF8StringEncoding];
-    NSError *err;
-    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData
-                                                        options:NSJSONReadingMutableContainers
-                                                          error:&err];
-    //    NSLog(@"---qweqw-------------------------------------%@", dic);
-    if([dic[@"Skip"] intValue] == 100){
+
+  /*
+   * 返回数据  0为伪装  1为非伪装
+   */
+  [NetworkClient POST_Path:signNum == 0?formalURL:testURL params:dict completed:^(NSData *stringData, id JSONDict) {
+    
+//        NSLog(@"---qweqw-------------------------------------%@", JSONDict);
+    if([JSONDict[@"Skip"] intValue] == 100){
       //不伪装
       if(valueBlock)valueBlock(YES);
       [PathUserDefaults setObject:@"0" forKey:@"isShowCheckView"];
@@ -66,12 +65,11 @@
       if(valueBlock)valueBlock(NO);
       [self fakeAction];
     }
-  } failure:^(NSError *error) {
+  } failed:^(NSError *error) {
     //伪装
     if(valueBlock)valueBlock(NO);
     [self fakeAction];
   }];
-  
 }
 
 + (void)fakeAction {
