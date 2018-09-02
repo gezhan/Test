@@ -1,0 +1,26 @@
+dependencies: \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Base/RCTJavaScriptLoader.mm \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/cxxreact/JSBundleType.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JavaScriptCore.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCWrapper.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Base/RCTConvert.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Views/RCTAnimationType.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Views/RCTTextDecorationLineType.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Base/RCTMultipartDataTask.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Base/RCTMultipartStreamReader.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/React/Base/RCTPerformanceLogger.h

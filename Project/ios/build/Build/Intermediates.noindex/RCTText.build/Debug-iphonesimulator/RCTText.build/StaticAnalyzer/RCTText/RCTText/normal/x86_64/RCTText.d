@@ -1,0 +1,21 @@
+dependencies: \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/Libraries/Text/RCTText.m \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/Libraries/Text/RCTText.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/React/UIView+React.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
+  /Users/huang/Desktop/Git_Project/node_modules/react-native/Libraries/Text/RCTShadowText.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/huang/Desktop/Git_Project/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h
