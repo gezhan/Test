@@ -1,0 +1,19 @@
+target 'huaqiangu' do
+pod 'Firebase', '~> 3.14.0'
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '7.0'
+pod 'Firebase/Core'
+pod 'Firebase/AdMob'
+pod 'SDWebImage', '~> 3.8.2'
+pod 'AFNetworking', '~> 2.6.3'
+pod 'FMDB', '~> 2.3'
+pod 'MJRefresh', '~> 2.2.1'
+pod 'JSONKit-NoWarning', '~> 1.2'
+pod 'UIActionSheet+Blocks', '~> 0.9'
+pod 'UIAlertView+Blocks', '~> 0.8.1'
+pod 'SGNavigationProgress', '~> 1.2'
+pod 'UMengAnalytics', '~> 4.2.4'
+pod 'StreamingKit', '~> 0.1.29'
+pod 'NJKWebViewProgress'
+end
