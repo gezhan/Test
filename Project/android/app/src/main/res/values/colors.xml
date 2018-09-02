@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="super_real_nav_bar">#4e89eb</color>
+    <color name="super_real_nav_text">#FFFFFF</color>
+    <color name="super_real_light">#4e89eb</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="title_bar_bg_color">#4e89eb</color>
+    <color name="search_bar_content_color">#cccccc</color>
+
+    <color name="main_color">#4e89eb</color>
+    <color name="default_font">#333333</color>
+</resources>

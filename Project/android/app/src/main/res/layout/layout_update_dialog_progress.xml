@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#99232323">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/update_bg"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center_horizontal"
+            android:paddingTop="10dp"
+            android:text="版本更新"
+            android:textColor="@color/default_font"
+            android:textSize="18dp" />
+
+        <com.rrkc.Download.RoundProgressBar
+            android:id="@+id/update_progress"
+            android:layout_width="110dip"
+            android:layout_height="110dip"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="52dp" />
+
+        <Button
+            android:id="@+id/update_dialog_progress_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/update_button_bg"
+            android:focusable="true"
+            android:gravity="center"
+            android:text="取消下载"
+            android:textColor="@color/default_font"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+</RelativeLayout>

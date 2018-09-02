@@ -1,0 +1,40 @@
+apply plugin: 'com.android.library'
+
+repositories {
+    jcenter()
+    maven { url 'https://oss.jfrog.org/libs-snapshot' }
+}
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion '25.0.0'
+
+    defaultConfig {
+        minSdkVersion 10
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dexOptions {
+    }
+}
+
+dependencies {
+    provided files('../app/libs/bugly_crash_release.jar')
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
+    compile 'io.reactivex:rxjava:1.1.4'
+    compile 'de.hdodenhof:circleimageview:2.0.0'
+    compile 'com.qiniu:qiniu-android-sdk:7.2.+'
+    compile files('libs/udesk-asmack-8-4.0.6.jar')
+    compile 'com.android.support:appcompat-v7:24.0.0'
+    compile files('libs/udesk-universal-image-loader-1.9.4.jar')
+    compile files('libs/org.xbill.dns_2.1.6.jar')
+    compile files('libs/udesk_sdk_3.6.0.jar')
+}

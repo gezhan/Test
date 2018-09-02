@@ -1,0 +1,2 @@
+configurations.maybeCreate("default")
+artifacts.add("default", file('idsafesV43ll20180531.aar'))

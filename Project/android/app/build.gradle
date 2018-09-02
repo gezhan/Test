@@ -1,0 +1,220 @@
+apply plugin: "com.android.application"
+
+import com.android.build.OutputFile
+
+/**
+ * The react.gradle file registers a task for each build variant (e.g. bundleDebugJsAndAssets
+ * and bundleReleaseJsAndAssets).
+ * These basically call `react-native bundle` with the correct arguments during the Android build
+ * cycle. By default, bundleDebugJsAndAssets is skipped, as in debug/dev mode we prefer to load the
+ * bundle directly from the development server. Below you can see all the possible configurations
+ * and their defaults. If you decide to add a configuration block, make sure to add it before the
+ * `apply from: "../../node_modules/react-native/react.gradle"` line.
+ *
+ * project.ext.react = [
+ *   // the name of the generated asset file containing your JS bundle
+ *   bundleAssetName: "index.android.bundle",
+ *
+ *   // the entry file for bundle generation
+ *   entryFile: "index.android.js",
+ *
+ *   // whether to bundle JS and assets in debug mode
+ *   bundleInDebug: false,
+ *
+ *   // whether to bundle JS and assets in release mode
+ *   bundleInRelease: true,
+ *
+ *   // whether to bundle JS and assets in another build variant (if configured).
+ *   // See http://tools.android.com/tech-docs/new-build-system/user-guide#TOC-Build-Variants
+ *   // The configuration property can be in the following formats
+ *   //         'bundleIn${productFlavor}${buildType}'
+ *   //         'bundleIn${buildType}'
+ *   // bundleInFreeDebug: true,
+ *   // bundleInPaidRelease: true,
+ *   // bundleInBeta: true,
+ *
+ *   // the root of your project, i.e. where "package.json" lives
+ *   root: "../../",
+ *
+ *   // where to put the JS bundle asset in debug mode
+ *   jsBundleDirDebug: "$buildDir/intermediates/assets/debug",
+ *
+ *   // where to put the JS bundle asset in release mode
+ *   jsBundleDirRelease: "$buildDir/intermediates/assets/release",
+ *
+ *   // where to put drawable resources / React Native assets, e.g. the ones you use via
+ *   // require('./image.png')), in debug mode
+ *   resourcesDirDebug: "$buildDir/intermediates/res/merged/debug",
+ *
+ *   // where to put drawable resources / React Native assets, e.g. the ones you use via
+ *   // require('./image.png')), in release mode
+ *   resourcesDirRelease: "$buildDir/intermediates/res/merged/release",
+ *
+ *   // by default the gradle tasks are skipped if none of the JS files or assets change; this means
+ *   // that we don't look at files in android/ or ios/ to determine whether the tasks are up to
+ *   // date; if you have any other folders that you want to ignore for performance reasons (gradle
+ *   // indexes the entire tree), add them here. Alternatively, if you have JS files in android/
+ *   // for example, you might want to remove it from here.
+ *   inputExcludes: ["android/**", "ios/**"],
+ *
+ *   // override which node gets called and with what additional arguments
+ *   nodeExecutableAndArgs: ["node"],
+ *
+ *   // supply additional arguments to the packager
+ *   extraPackagerArgs: []
+ * ]
+ */
+
+apply from: "../../node_modules/react-native/react.gradle"
+apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
+
+/**
+ * Set this to true to create two separate APKs instead of one:
+ *   - An APK that only works on ARM devices
+ *   - An APK that only works on x86 devices
+ * The advantage is the size of the APK is reduced by about 4MB.
+ * Upload all the APKs to the Play Store and people will download
+ * the correct one based on the CPU architecture of their device.
+ */
+def enableSeparateBuildPerCPUArchitecture = false
+
+/**
+ * Run Proguard to shrink the Java bytecode in release builds.
+ */
+def enableProguardInReleaseBuilds = false
+
+android {
+    signingConfigs {
+        debug {
+            storeFile file('../keystores/debug.keystore.jks')
+        }
+        release {
+            keyAlias 'rrkc_alias'
+            keyPassword 'rrkc_android'
+            storeFile file('../keystores/rrkc_keystore.jks')
+            storePassword 'rrygjf_android'
+        }
+    }
+    compileSdkVersion 23
+    buildToolsVersion "23.0.3"
+
+    defaultConfig {
+        applicationId "com.rrkc"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.2.7"
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86"
+        }
+        manifestPlaceholders = [
+                JPUSH_APPKEY: "3e24848df7a153e620b95b19",
+                AMAP_KEY: "74cccd8263b2b0432f42ff3d7dbfb4ad",
+                UMENG_KEY: "5b3b5b86a40fa37603000233",
+                APP_CHANNEL : "rrkc"    //应用渠道号
+        ]
+        multiDexEnabled true
+    }
+
+    productFlavors {
+        // 通用官网包
+        rrkc {}
+        // OPPO应用商店
+        oppoyysd {}
+        // 华为应用商店
+        hwyysd {}
+        // 腾讯应用宝
+        txyyb {}
+        // 小米应用商店
+        xmyysd {}
+        // VIVO应用商店
+        vivoyysd {}
+        // 魅族应用商店
+        mzyysd {}
+        // 奇虎360手机助手
+        qh360sjzs {}
+        // 阿里云应用分发平台
+        alyyyffpt {}
+
+        productFlavors.all {
+            flavor -> flavor.manifestPlaceholders = [APP_CHANNEL: name]
+        }
+    }
+
+    splits {
+        abi {
+            reset()
+            enable enableSeparateBuildPerCPUArchitecture
+            universalApk false  // If true, also generate a universal APK
+            include "armeabi-v7a", "x86"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+    }
+
+    // applicationVariants are e.g. debug, release
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            // For each separate APK per architecture, set a unique version code as described here:
+            // http://tools.android.com/tech-docs/new-build-system/user-guide/apk-splits
+            def versionCodes = ['armeabi': 1, "armeabi-v7a": 2, "x86": 3]
+            def abi = output.getFilter(OutputFile.ABI)
+            if (abi != null) {  // null for the universal-debug, universal-release variants
+                output.versionCodeOverride =
+                        versionCodes.get(abi) * 1048576 + defaultConfig.versionCode
+            }
+        }
+    }
+}
+
+dependencies {
+    compile files('libs/AMap2DMap_5.2.0_AMapSearch_5.5.0_AMapLocation_3.6.1_20171107.jar')
+    compile files('libs/baiqishi-risk-sdk-2.3.0.jar')
+    compile files('libs/bugly_crash_release.jar')
+    compile files('libs/smantifraud.jar')
+    compile files('libs/umeng-analytics-7.5.1.jar')
+    compile files('libs/umeng-common-1.5.1.jar')
+    compile 'com.google.android.gms:play-services-gcm:+'
+    compile "com.android.support:appcompat-v7:23.4.0"
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'com.nineoldandroids:library:2.4.0'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.android.support:support-v13:24.2.1'
+    compile "com.facebook.react:react-native:0.44.3"  // From node_modules
+    compile project(':idsafesV43ll20180531')
+    compile project(':react-native-linear-gradient')
+    compile project(':jpush-react-native')
+    compile project(':jcore-react-native')
+    compile project(':react-native-code-push')
+    compile project(':UdeskSDKUI')
+    compile(name: 'moxie-client-2.3.5', ext: 'aar')
+}
+
+// Run this once to be able to run the application with BUCK
+// puts all compile dependencies into folder libs for BUCK to use
+task copyDownloadableDepsToLibs(type: Copy) {
+    from configurations.compile
+    into 'libs'
+}
