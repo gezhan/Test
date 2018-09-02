@@ -1,0 +1,96 @@
+//
+//  PrefixHeader.pch
+//  zcmpro1
+//
+//  Created by HWC on 2017/6/21.
+//  Copyright © 2017年 Facebook. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+//在App内部调用外部链接
+#import <React/RCTLinkingManager.h>
+//桥接必须文件
+#import <React/RCTBridgeModule.h>
+#import <React/RCTBridge.h>
+#import <React/RCTLog.h>
+#import <React/RCTConvert.h>
+#import <React/RCTEventDispatcher.h>
+#import <React/RCTEventEmitter.h>
+//启动闪屏页
+#import "SplashScreen.h"
+//热更新库 CodePush
+#import <CodePush/CodePush.h>
+//错误收集&数据统计
+#import <Bugly/Bugly.h>
+//友盟统计
+#import <UMCommon/UMCommon.h>
+#import <UMAnalytics/MobClick.h>
+//极光推送
+#import <RCTJPushModule.h>
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+#import <UserNotifications/UserNotifications.h>
+#endif
+//魔蝎
+#import "MoxieSDK.h"
+//有盾实名认证（全流程）
+#import "UDIDEngine.h"
+#import "UDIDFaceCompareFactory.h"
+//高德地图
+#import <MAMapKit/MAMapKit.h>
+#import <AMapFoundationKit/AMapFoundationKit.h>
+#import <AMapLocationKit/AMapLocationKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
+#import <CoreLocation/CoreLocation.h>
+//MJRefresh刷新
+#import "MJRefresh.h"
+//白骑士反欺诈云
+#import "BqsDeviceFingerPrinting.h"
+//数美设备指纹
+#import "SmAntiFraud.h"
+//访问通讯录联系人相关
+#import <AddressBookUI/AddressBookUI.h>
+#import <ContactsUI/ContactsUI.h>
+
+//全局常量
+#import "MPRConstants.h"
+
+
+//伪装
+#import "mainHead.h"
+#import "TrackModel.h"
+#import "STKAudioPlayer.h"
+#import "MJRefresh.h"
+#import "CommUtils.h"
+#import "LMButton.h"
+#import "HistoryList.h"
+#import <MediaPlayer/MPNowPlayingInfoCenter.h>
+#import <MediaPlayer/MPMediaItem.h>
+#import "UIImageView+WebCache.h"
+#import "AutoRunLabel.h"
+#import "UIAlertView+Blocks.h"
+#import "NSMutableDictionary+SafeValue.h"
+#import "KKNavigationController.h"
+#import "Reachability.h"
+#import "MainList.h"
+#import "LBLaunchImageAdView.h"
+#import "AFService.h"
+#import "ApiHeader.h"
+#import "RACEXTScope.h"
+
+
+
+#define PathUserDefaults    [NSUserDefaults standardUserDefaults]
+
+////e签宝
+//#import "TVSignFramework/TVSignFramework.h"
+////阿里云
+//#import <AliyunOSSiOS/AliyunOSSiOS.h>
+//#import "AppDelegate.h"
+//#import <AssetsLibrary/AssetsLibrary.h>
+//#import <Photos/Photos.h>
+
+//菊花加载
+
+#endif /* PrefixHeader_pch */
